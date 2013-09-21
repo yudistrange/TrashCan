@@ -10,7 +10,7 @@ SLinkedList::SLinkedList()
 	size = 0;
 }
 
-Void SLinkedList::hInsert(int i)
+void SLinkedList::hInsert(int i)
 {
 	Snode * temp = new Snode;
 	temp->val  = i;
@@ -111,4 +111,24 @@ int SLinkedList::binSearch(int i)
 {
 	// TODO
 	return -1;
+}
+
+Snode * SLinkedList::nSearch(int i)
+{
+	if(!head) return NULL;
+
+	Snode * temp = head;
+
+	while(temp) {
+		if(temp->val == i)	
+			return temp;
+
+		temp = temp->next;
+	}
+	return NULL;	
+}
+
+Snode * SLinkedList::getHead()
+{
+	return head;
 }
