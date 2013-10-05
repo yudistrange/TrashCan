@@ -1,4 +1,7 @@
 // Binary Tree ADT
+
+#include <vector>
+
 struct node {
 	int val; 
 	node * left;
@@ -29,6 +32,11 @@ public:
 	~BinaryTree	();
 
 	/**
+	 * @name Accessors
+	 */
+	 node * GetRoot	();
+
+	/**
 	 * @name Insertion 
 	 */
 	void Insert 	(int a, node * parent);
@@ -40,6 +48,9 @@ public:
 	void Inorder 	();
 	void Postorder 	();
 	void Preorder 	();
+
+
+	std::vector <int> * Levelorder	();
 
 	/**
 	 * @name Misc Functions

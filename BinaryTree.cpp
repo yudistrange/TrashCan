@@ -1,6 +1,7 @@
 // Binary Tree Implementation
 #include "BinaryTree.hpp"
 #include <iostream>
+#include <queue>
 using namespace std;
 
 BinaryTree::BinaryTree()
@@ -110,6 +111,30 @@ bool BinaryTree::PathWithSum(int sum, node * root)
 	return PathWithSum(sum-root->val, root->left) || PathWithSum(sum-root->val, root->right);
 }
 
+std::vector<int> * BinaryTree::Levelorder()
+{
+	std::vector <int> * trav = new vector<int>;
+	std::queue  <node *> q;
+	node * temp = root;
+	q.push(temp);
+	while(!q.empty()) {
+		temp = q.front();
+		q.pop();
+		if(temp) {
+			trav->push_back(temp->val);
+			q.push(temp->left);
+			q.push(temp->right);
+		}
+	}
+	return trav;
+}
+
+node * BinaryTree::GetRoot()
+{
+	return root;
+}
+
+/*
 int main()
 {
 	BinaryTree B;
@@ -123,6 +148,8 @@ int main()
 	if(B.PathWithSumExists(s))
 		cout<<"Path from root to leaf with sum "<<s<<"exists\n";
 	else 
-		cout<<"No path exists\"n;
+		cout<<"No path exists\n";
+	B.Levelorder();
 	return 0;
 }
+*/
