@@ -1,5 +1,6 @@
 // Range min Query implementation
 // Used to find the minimum between two indices in an array
+// @PENDING
 #include<iostream>
 #include<vector>
 #include<limits.h>
@@ -35,6 +36,4 @@ int main()
 	RMQ = PreProcessRMQ(list);
 	cout<<"\n\nEnter the indices to be queried\n";
 	cin>>i>>j;
-
-	
 }

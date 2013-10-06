@@ -1,4 +1,5 @@
 // Maximum product subarray
+// @FINISHED
 #include<iostream>
 #include<vector>
 #include<limits.h>
